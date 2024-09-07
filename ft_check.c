@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:34:45 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/07 19:16:52 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/07 19:23:01 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int ft_isdigit_push_swap(char **str)
 		while (str[j][i] && str[j][i] >= '0' && str[j][i] <= '9')
 			i++;
 		if (str[j][i] != '\0')
-			return (0);
+			return (ft_putendl_fd("error", 2), 0);
 		j++;
 		i = 0;
 	}
@@ -108,7 +108,7 @@ int ft_check_str(char **res)
 		{	
 			nb2 = ft_atoi_int(res[i]);
 			if (nb1 == nb2 || nb1 >= 2147483648 || nb2 >= 2147483648)
-				return (0);
+				return (ft_putchar_fd("error", 2), 0);
 			i++;
 		}
 	}
