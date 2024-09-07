@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:34:45 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/05 13:28:16 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/07 19:16:52 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int ft_isdigit_push_swap(char **str)
 	int j;
 
 	i = 0;
-	j = 1;
+	j = 0;
 	if (str[j][0] == '\0')
 		return (0);
 	while (str[j])
@@ -78,9 +78,7 @@ int ft_isdigit_push_swap(char **str)
 		if (str[j][0] == '-' || str[j][0] == '+' )
 			i++;
 		while (str[j][i] && str[j][i] >= '0' && str[j][i] <= '9')
-		{
 			i++;
-		}
 		if (str[j][i] != '\0')
 			return (0);
 		j++;
@@ -117,7 +115,7 @@ int ft_check_str(char **res)
 	return (1);
 }
 
-int main(int ac, char **av)
+char **ft_parsing(int ac, char **av)
 {
 	char *str;
 	char **res;
@@ -126,26 +124,49 @@ int main(int ac, char **av)
 	i = 0;
 	if (ac > 1)
 	{
-		if (ac == 2)
-		{
-			if ((ft_isdigit_push_swap(av) == 0) || (ft_atoi_int(av[1]) == 2147483648))
-					printf("errur\n");
-			return (0);
-		}
 		str = ft_input(av);
 		if (!str)
-			return (1);
+			return (free(str), NULL);
 		res = ft_split(str, ' ');
 		if (!res)
-			return (free(str), 1);
-		if (ft_check_str(res) == 1)
-		{
-			printf("ayoub a reussi\n");
-		}
-		else 
-			printf("je suis le singe\n");
-		free(str);
-		ft_free_tab(res);
+			return (free(str), NULL);
+		if (ft_check_str(res) == 0)
+			return (free(str),ft_free_tab(res),NULL);
+		else
+			return (free(str),res);
 	}
+	return (NULL);
+}
+
+int *ft_init_tab(char **res)
+{
+	int i;
+	int len;
+	int *tab;
+
+	i = 0;
+	len = ft_strlen_tab(res);
+	tab = malloc(sizeof(int) * (len));
+	if (!tab)
+		return(ft_free_tab(res), NULL);
+	while (i < len)
+	{
+		tab[i] = ft_atoi_int(res[i]);
+		i++;
+	}
+	return (tab); // oublie pas de free res
+}
+int main(int ac, char **av)
+{
+	char **res;
+	int *tab;
+	//int i = 0;
+	res = ft_parsing(ac,av);
+	if (!res)
+		return (0);
+	tab = ft_init_tab(res);
+	
+	ft_free_tab(res);
+	free (tab);
 	return (0);
 }

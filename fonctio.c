@@ -41,3 +41,30 @@ void ft_free_tab(char **res)
 	free(res);
 	return ;
 }
+int ft_isdigit_string(char *str)
+{
+	int j;
+	
+	j = 0;
+	if (str[j] == '\0')
+		return (0);
+	while (str[j])
+	{
+		if (str[j] == '-' || str[j] == '+' )
+			j++;
+		while (str[j] && str[j] >= '0' && str[j] <= '9')
+			j++;
+		if (str[j] != '\0')
+			return (0);
+	}
+	return (1);
+}
+int	ft_strlen_tab(char **res)
+{
+	int i;
+
+	i = 0;
+	while (res[i])
+		i++;
+	return (i);
+}
