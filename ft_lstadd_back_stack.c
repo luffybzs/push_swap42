@@ -1,47 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   ft_lstadd_back_stack.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/05 17:48:11 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/09 15:42:25 by ayarab           ###   ########.fr       */
+/*   Created: 2024/09/09 14:29:10 by ayarab            #+#    #+#             */
+/*   Updated: 2024/09/09 16:52:48 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	add_to_queue(t_lst *lst, int nbr)
+void	ft_lstadd_back_stack(t_node *lst, t_node *new)
 {
-	t_node	*new;
-	t_node	*current;
+	t_node *temp;
 
-	new = malloc(sizeof(t_node));
-	if (!new)
-		return ;
-	new->next = NULL;
-	new->content = nbr;
-	if (!lst->first)
-		lst->first = new;
-	else
+	if (!lst)
 	{
-		current = lst->first;
-		while (current->next)
-			current = current->next;
-		current->next = new;
+		lst = new;
+		return ;
 	}
-}
-
-t_lst	*ft_init_stack(void)
-{
-	int i;
-	t_lst *new;
-
-	i = 0;
-	new = malloc(sizeof(t_lst));
-	if (!new)
-		return (NULL);
-	new->first = NULL;
-	return (new);
+	temp = lst;
+	while (temp->next)
+	{
+		temp = temp->next;
+	}
+	temp->next = new;
 }

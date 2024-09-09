@@ -6,18 +6,18 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:34:45 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/07 19:23:01 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/09 15:39:40 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-long ft_atoi_int(char *str)
+long	ft_atoi_int(char *str)
 {
-	size_t i;
-	long int res;
-	int sign;
+	size_t		i;
+	long int	res;
+	int			sign;
 
 	i = 0;
 	res = 0;
@@ -38,18 +38,18 @@ long ft_atoi_int(char *str)
 	}
 	return (res * sign);
 }
-char *ft_input(char **av)
+char	*ft_input(char **av)
 {
-	int i;
-	char *str;
-	char *space;
+	int		i;
+	char	*str;
+	char	*space;
 
 	space = ft_strdup(" ");
 	if (space == NULL)
 		return (NULL);
 	i = 1;
 	str = ft_strdup(av[i]);
-	if(!str)
+	if (!str)
 		return (free(space), NULL);
 	while (av[i + 1])
 	{
@@ -64,10 +64,10 @@ char *ft_input(char **av)
 	free(space);
 	return (str);
 }
-int ft_isdigit_push_swap(char **str)
+int	ft_isdigit_push_swap(char **str)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -75,7 +75,7 @@ int ft_isdigit_push_swap(char **str)
 		return (0);
 	while (str[j])
 	{
-		if (str[j][0] == '-' || str[j][0] == '+' )
+		if (str[j][0] == '-' || str[j][0] == '+')
 			i++;
 		while (str[j][i] && str[j][i] >= '0' && str[j][i] <= '9')
 			i++;
@@ -86,12 +86,12 @@ int ft_isdigit_push_swap(char **str)
 	}
 	return (1);
 }
-int ft_check_str(char **res)
+int	ft_check_str(char **res)
 {
-	int i;
-	int j;
-	long int nb1;
-	long int nb2;
+	int			i;
+	int			j;
+	long int	nb1;
+	long int	nb2;
 
 	j = -1;
 	nb1 = 0;
@@ -105,21 +105,21 @@ int ft_check_str(char **res)
 		if (nb1 == 2147483648)
 			return (0);
 		while (res[i])
-		{	
+		{
 			nb2 = ft_atoi_int(res[i]);
 			if (nb1 == nb2 || nb1 >= 2147483648 || nb2 >= 2147483648)
-				return (ft_putchar_fd("error", 2), 0);
+				return (ft_putendl_fd("error", 2), 0);
 			i++;
 		}
 	}
 	return (1);
 }
 
-char **ft_parsing(int ac, char **av)
+char	**ft_parsing(int ac, char **av)
 {
-	char *str;
-	char **res;
-	int i;
+	char	*str;
+	char	**res;
+	int		i;
 
 	i = 0;
 	if (ac > 1)
@@ -131,42 +131,58 @@ char **ft_parsing(int ac, char **av)
 		if (!res)
 			return (free(str), NULL);
 		if (ft_check_str(res) == 0)
-			return (free(str),ft_free_tab(res),NULL);
+			return (free(str), ft_free_tab(res), NULL);
 		else
-			return (free(str),res);
+			return (free(str), res);
 	}
 	return (NULL);
 }
 
-int *ft_init_tab(char **res)
+int	*ft_init_tab(char **res, t_lst *lst)
 {
-	int i;
-	int len;
-	int *tab;
+	int	i;
+	int	*tab;
 
 	i = 0;
-	len = ft_strlen_tab(res);
-	tab = malloc(sizeof(int) * (len));
+	lst->len = ft_strlen_tab(res);
+	tab = malloc(sizeof(int) * (lst->len));
 	if (!tab)
-		return(ft_free_tab(res), NULL);
-	while (i < len)
+		return (ft_free_tab(res), NULL);
+	while (i < lst->len)
 	{
 		tab[i] = ft_atoi_int(res[i]);
 		i++;
 	}
-	return (tab); // oublie pas de free res
+	return (tab);
 }
-int main(int ac, char **av)
+int	*ft_valid(int ac, char **av, t_lst *lst)
 {
-	char **res;
-	int *tab;
-	//int i = 0;
-	res = ft_parsing(ac,av);
+	char	**res;
+	int		*tab;
+
+	res = ft_parsing(ac, av);
 	if (!res)
-		return (0);
-	tab = ft_init_tab(res);
-	
-	ft_free_tab(res);
-	free (tab);
-	return (0);
+		return (NULL);
+	tab = ft_init_tab(res, lst);
+	if (!tab)
+		return (ft_free_tab(res), NULL);
+	return (ft_free_tab(res), tab);
 }
+// int main(int ac, char **av)
+// {
+// 	char **res;
+// 	int *tab;
+// 	int i = 0;
+// 	res = ft_parsing(ac,av);
+// 	if (!res)
+// 		return (0);
+// 	tab = ft_init_tab(res);
+// 	while (res[i])
+// 	{
+// 		printf("%d\n", tab[i]);
+// 		i++;
+// 	}
+// 	ft_free_tab(res);
+// 	free (tab);
+// 	return (0);
+// }
