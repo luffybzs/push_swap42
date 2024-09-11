@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 17:48:11 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/09 15:42:25 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/10 13:34:57 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ t_lst	*ft_init_stack(void)
 	new = malloc(sizeof(t_lst));
 	if (!new)
 		return (NULL);
-	new->first = NULL;
+	else
+		new->first = NULL;
 	return (new);
 }

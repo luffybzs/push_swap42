@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:35:59 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/09 15:41:35 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/11 19:55:40 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,7 @@ typedef struct s_lst
 	int				len;
 	t_node			*first;
 }					t_lst;
-
-// typedef struct s_stack
-// {
-// 	struct s_list	*first;
-// }					t_stack;
-
+//
 t_lst				*ft_init_stack(void);
 t_lst				*ft_lstnew(int content);
 long				ft_atoi_int(char *str);
@@ -51,6 +46,30 @@ char				**ft_parsing(int ac, char **av);
 int					ft_isdigit_string(char *str);
 int					*ft_init_tab(char **res, t_lst *lst);
 int					ft_strlen_tab(char **res);
-int					*ft_valid(int ac, char **av, t_lst *lst);
+int					*ft_valid(int ac, char **av, t_lst **lst);
+void				ft_free_list(t_lst *lst);
+void				display_stack(t_lst *lst);
+int 				ft_lstlen(t_lst *lst);
+t_node 	*ft_last(t_node *lst);
 
+// push
+void				ft_push(t_lst *lsta, t_lst *lstb);
+
+// swap
+void				swap(t_lst *lst);
+void				ft_sa(t_lst *lsta);
+void				ft_sb(t_lst *lstb);
+void				ft_ss(t_lst *lsta, t_lst *lstb);
+// rotate
+t_node				*ft_last(t_node *lst);
+void				rotate(t_lst *lst);
+void				ft_ra(t_lst *lst);
+void				ft_rb(t_lst *lst);
+void				ft_rr(t_lst *lsta, t_lst *lstb);
+// reverse rotate
+t_node				ft_second_last(t_node *lst);
+void				reverse_rotate(t_lst *lst);
+void				ft_rra(t_lst *lst);
+void				ft_rrb(t_lst *lst);
+void				ft_rrr(t_lst *lsta, t_lst *lstb);
 #endif

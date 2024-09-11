@@ -64,7 +64,24 @@ int	ft_strlen_tab(char **res)
 	int i;
 
 	i = 0;
+	if (!res)
+		return (0);
 	while (res[i])
 		i++;
+	return (i);
+}
+int 	ft_lstlen(t_lst *lst)
+{
+	t_node *current;
+	int	i;
+
+	i = 0;
+	
+	current = lst->first;
+	while (current)
+	{
+		current = current->next;
+		i++;
+	}
 	return (i);
 }

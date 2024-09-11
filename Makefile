@@ -6,11 +6,12 @@
 #    By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/02 14:36:14 by ayarab            #+#    #+#              #
-#    Updated: 2024/09/09 14:31:26 by ayarab           ###   ########.fr        #
+#    Updated: 2024/09/11 17:16:15 by ayarab           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS =	ft_check.c fonctio.c push_swap.c lst_new.c stack.c ft_lstadd_back_stack.c \
+		push.c swap.c rotate.c \
 					
 LIBFT_DIR       = libft/
 LIBFT			= $(LIBFT_DIR)libft.a
