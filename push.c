@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 12:08:30 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/11 19:20:38 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/12 15:26:35 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,19 @@ void	ft_push(t_lst *lsta, t_lst *lstb)
 		return;
 	current = lsta->first;
 	lsta->first = current->next;
-	
 	current->next = lstb->first;
 	lstb->first = current;
-	// if (lstb->first == NULL)
-	// {
-	// 	lstb->first = current;
-	// 	current->next = NULL;
-	// 	lsta->first = new_top;
-	// }
-	// else
-	// {
-	// 	lstb->first->next = current;
-	// 	lsta->first = new_top;
-	// }
+}
+void 	ft_pb(t_lst *lsta, t_lst *lstb)
+{
+	ft_push(lsta, lstb);
+	ft_putstr_fd("pb\n", 1);
+}
+
+void	ft_pa(t_lst *lstb, t_lst *lsta)
+{
+	ft_push(lstb, lsta);
+	ft_putstr_fd("pa\n", 1);
 }
 
 int	main(void)
