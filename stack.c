@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 17:48:11 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/10 13:34:57 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/23 12:04:37 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	add_to_queue(t_lst *lst, int nbr)
 		return ;
 	new->next = NULL;
 	new->content = nbr;
+	new->target = NULL;
 	if (!lst->first)
 		lst->first = new;
 	else

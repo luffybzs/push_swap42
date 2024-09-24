@@ -6,13 +6,16 @@
 #    By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/02 14:36:14 by ayarab            #+#    #+#              #
-#    Updated: 2024/09/12 15:11:21 by ayarab           ###   ########.fr        #
+#    Updated: 2024/09/23 18:45:47 by ayarab           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	ft_check.c fonctio.c push_swap.c \
+SRCS =	ft_check.c fonction.c push_swap.c \
 		lst_new.c stack.c ft_lstadd_back_stack.c \
 		push.c swap.c rotate.c ft_parsing.c	\
+		turkish.c ft_cost_algo.c ft_pivot.c \
+		ft_small_sort.c ft_sort_stack.c \
+		fonction1.c \
 		 
 					
 LIBFT_DIR       = libft/
