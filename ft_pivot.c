@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:25:11 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/23 16:30:50 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/24 19:43:20 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_sortintab(int *tab, int start, int end)
 }
 void	ft_swap(int *a, int *b)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = *a;
 	*a = *b;

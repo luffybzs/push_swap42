@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 12:07:19 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/12 15:17:31 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/24 19:42:46 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	swap(t_lst *lst)
 	t_node	*second;
 
 	current = lst->first;
-	if(!current || ft_lstlen(lst) == 1)
+	if (!current || ft_lstlen(lst) == 1)
 		return ;
 	second = current->next;
 	tmp = current->content;

@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 11:47:08 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/23 18:39:57 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/24 19:42:51 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void	ft_rotate_top(t_node *node, t_lst *stack, t_stack *both)
 }
 t_node	*ft_lower_price(t_lst *stack)
 {
-	t_node		*current;
-	t_node		*cheapest;
+	t_node	*current;
+	t_node	*cheapest;
 
 	current = stack->first;
 	cheapest = stack->first;

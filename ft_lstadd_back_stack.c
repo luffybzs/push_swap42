@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 14:29:10 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/11 18:27:22 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/24 19:43:14 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back_stack(t_node *lst, t_node *new)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if (!lst)
 	{

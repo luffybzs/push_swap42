@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:36:07 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/23 18:49:54 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/24 19:42:27 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	display_stack(t_lst *lst)
 	if (current == NULL)
 	{
 		printf("la liste est vide\n");
-		return;
+		return ;
 	}
 	while (current)
 	{
@@ -44,54 +44,38 @@ void	display_stack(t_lst *lst)
 	}
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	int *tab;
-	int i;
-	t_stack stack;
-	
+	int		*tab;
+	int		i;
+	t_stack	stack;
+
 	i = 0;
 	stack.lsta.first = NULL;
 	stack.lstb.first = NULL;
-	tab = ft_valid(ac,av,&stack.lsta);
-		if (!tab)
-			return(0);
+	tab = ft_valid(ac, av, &stack.lsta);
+	if (!tab)
+		return (0);
 	while (i < stack.lsta.len)
 		add_to_queue(&stack.lsta, tab[i++]);
-	if(is_sorted(&stack.lsta, &stack.lstb) == 0)
-		return(free(tab), ft_free_list(&stack.lsta), ft_free_list(&stack.lstb), 0);
+	if (is_sorted(&stack.lsta, &stack.lstb) == 0)
+		return (free(tab), ft_free_list(&stack.lsta), ft_free_list(&stack.lstb),
+			0);
 	if (stack.lsta.len == 2)
 	{
 		sort_for_2(&stack.lsta, &stack.lstb);
-		return(ft_free_list(&stack.lsta), ft_free_list(&stack.lstb), free(tab), 0);
+		return (ft_free_list(&stack.lsta), ft_free_list(&stack.lstb), free(tab),
+			0);
 	}
 	else if (stack.lsta.len == 3)
-			return(sort_for_3(&stack.lsta), free(tab), ft_free_list(&stack.lsta), ft_free_list(&stack.lstb), 0);
+		return (sort_for_3(&stack.lsta), free(tab), ft_free_list(&stack.lsta),
+			ft_free_list(&stack.lstb), 0);
 	ft_sort_tab(tab, stack.lsta.len);
 	ft_sort_array(tab, stack.lsta.len);
 	ft_sort_stack(&stack, stack.lsta.len, tab);
 	display_stack(&stack.lsta);
 	return (0);
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // int	main(int ac, char **av)
 // {
@@ -109,9 +93,7 @@ int main(int ac, char **av)
 // 	while (i < lst->len)
 // 		add_to_queue(lst, tab[i++]);
 // 	// ft_supa_algo(................)
-	
-	
-	
+
 // 	free(tab);
 // 	display_stack(lst);
 // 	ft_free_list(lst);

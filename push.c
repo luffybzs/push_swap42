@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 12:08:30 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/23 12:01:56 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/24 19:42:33 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	ft_push(t_lst *lsta, t_lst *lstb)
 	t_node	*current;
 
 	if (lsta->first == NULL)
-		return;
+		return ;
 	current = lsta->first;
 	lsta->first = current->next;
 	current->next = lstb->first;
 	lstb->first = current;
 }
-void 	ft_pb(t_lst *lsta, t_lst *lstb)
+void	ft_pb(t_lst *lsta, t_lst *lstb)
 {
 	ft_push(lsta, lstb);
 	ft_putstr_fd("pb\n", 1);

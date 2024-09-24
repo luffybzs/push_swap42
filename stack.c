@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 17:48:11 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/23 12:04:37 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/24 19:42:39 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	add_to_queue(t_lst *lst, int nbr)
 
 t_lst	*ft_init_stack(void)
 {
-	int i;
-	t_lst *new;
+	int		i;
+	t_lst	*new;
 
 	i = 0;
 	new = malloc(sizeof(t_lst));
