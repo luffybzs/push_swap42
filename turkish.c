@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 11:47:08 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/24 19:42:51 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/25 14:31:18 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_node	*ft_find_lower_price(t_lst *stack)
 	}
 	return (lowest);
 }
-void	ft_insert(t_lst *stack)
+void	ft_insert(t_stack *stack)
 {
 	t_node	*change;
 	t_node	*closest;
@@ -41,7 +41,7 @@ void	ft_insert(t_lst *stack)
 
 void	ft_rotate_top(t_node *node, t_lst *stack, t_stack *both)
 {
-	if (ft_search_index(node, stack) > (ft_lstlen(stack->first) / 2))
+	if (ft_search_index(node, stack) > (ft_lstlen(stack) / 2))
 	{
 		while (stack->first != node)
 		{

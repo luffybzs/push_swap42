@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 17:31:58 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/24 19:43:03 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/25 14:31:49 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_cost_top(t_node *lst, t_lst *stack)
 	cost = 0;
 	current = lst;
 	index = ft_search_index(lst, stack);
-	if (index > ft_lstlen(stack->first) / 2)
+	if (index > ft_lstlen(stack) / 2)
 	{
 		while (current->next)
 		{

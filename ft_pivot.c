@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:25:11 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/24 19:43:20 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/25 14:36:56 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_sorting(int *tab, int start, int end)
 	if (start < end)
 	{
 		pivot_index = ft_sortintab(tab, start, end);
-		ft_sort_rc(tab, pivot_index + 1, end);
-		ft_sort_rc(tab, start, pivot_index - 1);
+		ft_sorting(tab, pivot_index + 1, end);
+		ft_sorting(tab, start, pivot_index - 1);
 	}
 }
 

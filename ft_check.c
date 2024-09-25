@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:34:45 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/12 15:07:24 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/25 15:34:11 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int	ft_check_str(char **res)
 		i = j + 1;
 		nb1 = ft_atoi_int(res[j]);
 		if (nb1 == 2147483648)
-			return (0);
+			return (ft_putendl_fd("error", 2), 0);
 		while (res[i])
 		{
 			nb2 = ft_atoi_int(res[i]);

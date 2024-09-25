@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:52:52 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/23 18:42:25 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/25 17:37:48 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ void	ft_sort_stack(t_stack *both, int len, int *tab)
 	{
 		ft_cost_all(&both->lsta, &both->lstb);
 		ft_insert(both);
+		ft_sort(both);
 	}
-	ft_sort(both);
 }
 void	ft_first_half(t_stack *both, int len, int *tab)
 {
-	t_node	*stack;
+	t_lst	*stack;
 
 	stack = &both->lsta;
-	while (ft_lstlen(stack->first) > len / 2 + 1)
+	while (ft_lstlen(stack) > len / 2 + 1)
 	{
 		if (stack->first->content > tab[len / 4 * 3])
 		{
@@ -51,12 +51,12 @@ void	ft_first_half(t_stack *both, int len, int *tab)
 }
 void	ft_last_half(t_stack *both, int len, int *tab)
 {
-	t_node	*stack;
+	t_lst	*stack;
 	int		number_input;
 
 	stack = &both->lsta;
 	number_input = len;
-	while (ft_lstlen(stack->first) > 3)
+	while (ft_lstlen(stack) > 3)
 	{
 		if (stack->first->content > tab[number_input / 4])
 			ft_pb(&both->lsta, &both->lstb);
@@ -71,6 +71,6 @@ void	ft_sort(t_stack *both)
 {
 	t_node		*lower;
 
-	lower = find_low(&both->lsta);
+	lower = search_low(&both->lsta);
 	ft_rotate_top(lower, &both->lsta, both);
 }

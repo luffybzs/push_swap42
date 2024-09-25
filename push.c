@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 12:08:30 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/24 19:42:33 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/25 15:59:29 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_pb(t_lst *lsta, t_lst *lstb)
 	ft_putstr_fd("pb\n", 1);
 }
 
-void	ft_pa(t_lst *lstb, t_lst *lsta)
+void	ft_pa(t_lst *lsta, t_lst *lstb)
 {
 	ft_push(lstb, lsta);
 	ft_putstr_fd("pa\n", 1);

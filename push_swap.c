@@ -6,12 +6,18 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:36:07 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/24 19:42:27 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/25 17:27:31 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
+void	ft_free_end(int *tab, t_lst *lsta, t_lst *lstb)
+{
+	free(tab);
+	ft_free_list(lstb);
+	ft_free_list(lsta);
+}
 
 void	ft_free_list(t_lst *lst)
 {
@@ -25,7 +31,6 @@ void	ft_free_list(t_lst *lst)
 		free(current);
 		current = ptr;
 	}
-	free(lst);
 }
 void	display_stack(t_lst *lst)
 {
@@ -58,22 +63,23 @@ int	main(int ac, char **av)
 		return (0);
 	while (i < stack.lsta.len)
 		add_to_queue(&stack.lsta, tab[i++]);
-	if (is_sorted(&stack.lsta, &stack.lstb) == 0)
-		return (free(tab), ft_free_list(&stack.lsta), ft_free_list(&stack.lstb),
-			0);
+	if (is_sorted(&stack.lsta, &stack.lstb) == 1)
+		return (ft_free_end(tab,&stack.lsta,&stack.lstb), 0);
 	if (stack.lsta.len == 2)
 	{
-		sort_for_2(&stack.lsta, &stack.lstb);
-		return (ft_free_list(&stack.lsta), ft_free_list(&stack.lstb), free(tab),
-			0);
+		ft_sort_for_2(&stack.lsta, &stack.lstb);
+		return (ft_free_end(tab,&stack.lsta,&stack.lstb), 0);
 	}
 	else if (stack.lsta.len == 3)
-		return (sort_for_3(&stack.lsta), free(tab), ft_free_list(&stack.lsta),
-			ft_free_list(&stack.lstb), 0);
+		return (ft_sort_for_3(&stack.lsta), ft_free_end(tab,&stack.lsta,&stack.lstb), 0);
+	if (stack.lsta.len > 3)
+	{
 	ft_sort_tab(tab, stack.lsta.len);
-	ft_sort_array(tab, stack.lsta.len);
 	ft_sort_stack(&stack, stack.lsta.len, tab);
-	display_stack(&stack.lsta);
+	 printf("\nfinal stack \n");
+	 display_stack(&stack.lsta);
+	ft_free_end(tab,&stack.lsta,&stack.lstb);
+	}
 	return (0);
 }
 
