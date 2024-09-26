@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:34:45 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/26 15:48:35 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 18:35:30 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ long	ft_atoi_int(char *str)
 	}
 	return (res * sign);
 }
+
 char	*ft_input(char **av)
 {
 	int		i;
@@ -64,6 +65,7 @@ char	*ft_input(char **av)
 	free(space);
 	return (str);
 }
+
 int	ft_isdigit_push_swap(char **str)
 {
 	int	i;
@@ -86,6 +88,7 @@ int	ft_isdigit_push_swap(char **str)
 	}
 	return (1);
 }
+
 int	ft_check_str(char **res)
 {
 	int			i;
@@ -119,6 +122,7 @@ char	**ft_parsing(int ac, char **av)
 {
 	char	*str;
 	char	**res;
+
 	if (ac > 1)
 	{
 		str = ft_input(av);
@@ -134,6 +138,7 @@ char	**ft_parsing(int ac, char **av)
 	}
 	return (NULL);
 }
+
 // int main(int ac, char **av)
 // {
 // 	char **res;

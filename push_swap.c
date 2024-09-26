@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:36:07 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/26 17:07:17 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 18:43:12 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,7 @@ void	ft_free_list(t_lst *lst)
 		current = ptr;
 	}
 }
-void	display_stack(t_lst *lst)
-{
-	t_node	*current;
 
-	current = lst->first;
-	if (current == NULL)
-	{
-		printf("la liste est vide\n");
-		return ;
-	}
-	while (current)
-	{
-		printf("[%d]\n", current->content);
-		current = current->next;
-	}
-}
 int	ft_check_empty(int ac, char **av)
 {
 	int	i;
@@ -96,3 +81,21 @@ int	main(int ac, char **av)
 	ft_ft(tab, &stack.lsta, &stack.lstb);
 	return (0);
 }
+
+
+// void	display_stack(t_lst *lst)
+// {
+// 	t_node	*current;
+
+// 	current = lst->first;
+// 	if (current == NULL)
+// 	{
+// 		printf("la liste est vide\n");
+// 		return ;
+// 	}
+// 	while (current)
+// 	{
+// 		printf("[%d]\n", current->content);
+// 		current = current->next;
+// 	}
+// }

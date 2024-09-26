@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:52:52 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/26 17:06:57 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 18:38:35 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_sort_stack(t_stack *both, int len, int *tab)
 	}
 	ft_sort(both);
 }
+
 void	ft_first_half(t_stack *both, int len, int *tab)
 {
 	t_lst	*stack;
@@ -49,6 +50,7 @@ void	ft_first_half(t_stack *both, int len, int *tab)
 		}
 	}
 }
+
 void	ft_last_half(t_stack *both, int len, int *tab)
 {
 	t_lst	*stack;
@@ -67,9 +69,10 @@ void	ft_last_half(t_stack *both, int len, int *tab)
 		}
 	}
 }
+
 void	ft_sort(t_stack *both)
 {
-	t_node		*lower;
+	t_node	*lower;
 
 	lower = search_low(&both->lsta);
 	ft_rotate_top(lower, &both->lsta, both);

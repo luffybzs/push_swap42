@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 17:31:58 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/25 14:31:49 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 18:36:56 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_cost_all(t_lst *lsta, t_lst *lstb)
 		lst = lst->next;
 	}
 }
+
 int	ft_cost(t_node *lst, t_lst *lsta, t_lst *lstb)
 {
 	int	cost;
@@ -33,6 +34,7 @@ int	ft_cost(t_node *lst, t_lst *lsta, t_lst *lstb)
 	++cost;
 	return (cost);
 }
+
 int	ft_cost_top(t_node *lst, t_lst *stack)
 {
 	t_node	*current;
@@ -55,6 +57,7 @@ int	ft_cost_top(t_node *lst, t_lst *stack)
 		cost = index;
 	return (cost);
 }
+
 t_node	*ft_highest(t_node *lst, t_lst *stack)
 {
 	int		temp;

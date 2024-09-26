@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:06:25 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/26 16:44:40 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 18:37:12 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	*ft_init_tab(char **res, t_lst *lst)
 	}
 	return (tab);
 }
+
 int	*ft_valid(int ac, char **av, t_lst *lst)
 {
 	char	**res;

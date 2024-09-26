@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:21:01 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/25 17:48:41 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 18:41:57 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,18 +107,18 @@ char	**ft_split(char const *str, char c)
 	while (str[i] == c)
 		i++;
 	if (!ft_split2((char *)str, c, res, i))
-		return(ft_free(res), NULL);
+		return (ft_free(res), NULL);
 	return (res);
 }
 /*
  int	main(void)
  {
-    char **tab;
-    char *str = "hello!";
-    char  l = ' ';
-     int i;
- 	tab = ft_split(str,l);
-    i = 0;
+	char **tab;
+	char *str = "hello!";
+	char  l = ' ';
+		int i;
+	tab = ft_split(str,l);
+	i = 0;
 		while (i < 2)
 			printf("%s\n", tab[i++]);
 		ft_free(tab);

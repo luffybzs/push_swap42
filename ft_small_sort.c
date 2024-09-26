@@ -6,13 +6,13 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:12:55 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/26 17:06:51 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 18:37:55 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int   is_sorted(t_lst *lsta, t_lst *lstb)
+int	is_sorted(t_lst *lsta, t_lst *lstb)
 {
 	t_node	*node;
 
@@ -29,6 +29,7 @@ int   is_sorted(t_lst *lsta, t_lst *lstb)
 	}
 	return (1);
 }
+
 void	ft_sort_2(t_lst *lsta, t_lst *lstb)
 {
 	t_node	*lst;
@@ -58,6 +59,7 @@ void	ft_3(t_lst *lsta)
 	if (lowest_ind == 1)
 		ft_sa(lsta);
 }
+
 t_node	*search_low(t_lst *lst)
 {
 	t_node	*current;

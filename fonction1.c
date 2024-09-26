@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fonction1.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/26 18:32:29 by ayarab            #+#    #+#             */
+/*   Updated: 2024/09/26 18:33:57 by ayarab           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 char	*ft_strjoin_free(char *s1, char *s2)
@@ -28,9 +40,10 @@ char	*ft_strjoin_free(char *s1, char *s2)
 	free(s1);
 	return (str);
 }
-void ft_free_tab(char **res)
+
+void	ft_free_tab(char **res)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (res[i])
@@ -41,16 +54,17 @@ void ft_free_tab(char **res)
 	free(res);
 	return ;
 }
-int ft_isdigit_string(char *str)
+
+int	ft_isdigit_string(char *str)
 {
-	int j;
-	
+	int	j;
+
 	j = 0;
 	if (str[j] == '\0')
 		return (0);
 	while (str[j])
 	{
-		if (str[j] == '-' || str[j] == '+' )
+		if (str[j] == '-' || str[j] == '+')
 			j++;
 		while (str[j] && str[j] >= '0' && str[j] <= '9')
 			j++;
@@ -59,9 +73,10 @@ int ft_isdigit_string(char *str)
 	}
 	return (1);
 }
+
 int	ft_strlen_tab(char **res)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!res)
@@ -70,13 +85,13 @@ int	ft_strlen_tab(char **res)
 		i++;
 	return (i);
 }
-int 	ft_lstlen(t_lst *lst)
+
+int	ft_lstlen(t_lst *lst)
 {
-	t_node *current;
-	int	i;
+	int		i;
+	t_node	*current;
 
 	i = 0;
-	
 	current = lst->first;
 	while (current)
 	{

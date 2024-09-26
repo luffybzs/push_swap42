@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 12:07:19 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/24 19:42:46 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 18:41:19 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	swap(t_lst *lst)
 	current->content = second->content;
 	second->content = tmp;
 }
+
 void	ft_sa(t_lst *lsta)
 {
 	swap(lsta);
@@ -37,6 +38,7 @@ void	ft_sb(t_lst *lstb)
 	swap(lstb);
 	ft_putstr_fd("sb\n", 1);
 }
+
 void	ft_ss(t_lst *lsta, t_lst *lstb)
 {
 	swap(lsta);
