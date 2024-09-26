@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:35:59 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/25 15:11:58 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 17:07:10 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ typedef struct s_stack
 }			t_stack;		
 
 //
-t_lst				*ft_init_stack(void);
-t_lst				*ft_lstnew(int content);
 long				ft_atoi_int(char *str);
 char				*ft_input(char **av);
 void				add_to_queue(t_lst *lst, int nbr);
@@ -60,8 +58,8 @@ void				display_stack(t_lst *lst);
 int 				ft_lstlen(t_lst *lst);
 int					is_sorted(t_lst *lsta, t_lst *lstb);
 int					ft_search_index(t_node *node, t_lst *lst);
-void				ft_sort_for_3(t_lst *lsta);
-void				ft_sort_for_2(t_lst *lsta, t_lst *lstb);
+void				ft_3(t_lst *lsta);
+void				ft_sort_2(t_lst *lsta, t_lst *lstb);
 void				ft_sort_tab(int *tab, int len);
 void				ft_sorting(int *tab, int start, int end);
 int					ft_sortintab(int *tab, int start, int end);
@@ -76,7 +74,7 @@ int					ft_cost_top(t_node *lst, t_lst *stack);
 void				ft_cost_all(t_lst *lsta, t_lst *lstb);
 void				ft_insert(t_stack *stack);
 void				ft_rotate_top(t_node *node, t_lst *stack, t_stack *both);
-void				ft_free_end(int *tab, t_lst *lsta, t_lst *lstb);
+void				ft_ft(int *tab, t_lst *lsta, t_lst *lstb);
 t_node				*ft_lower_price(t_lst *stack);
 t_node				*ft_find_lower_price(t_lst *stack);
 t_node				*ft_highest(t_node *lst, t_lst *stack);

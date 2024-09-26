@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:06:25 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/24 19:43:16 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 16:44:40 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,6 @@ int	*ft_valid(int ac, char **av, t_lst *lst)
 	res = ft_parsing(ac, av);
 	if (!res)
 		return (NULL);
-	// *lst = ft_init_stack();
-	// if (!*lst)
-	// 	return (ft_free_tab(res), NULL);
 	tab = ft_init_tab(res, lst);
 	if (!tab)
 		return (ft_free_tab(res), ft_free_list(lst), NULL);

@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:52:52 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/25 17:37:48 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 17:06:57 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ void	ft_sort_stack(t_stack *both, int len, int *tab)
 {
 	ft_first_half(both, len, tab);
 	ft_last_half(both, len, tab);
-	ft_sort_for_3(&both->lsta);
+	ft_3(&both->lsta);
 	while (both->lstb.first != NULL)
 	{
 		ft_cost_all(&both->lsta, &both->lstb);
 		ft_insert(both);
-		ft_sort(both);
 	}
+	ft_sort(both);
 }
 void	ft_first_half(t_stack *both, int len, int *tab)
 {

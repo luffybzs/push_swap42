@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:12:55 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/25 15:48:56 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 17:06:51 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int   is_sorted(t_lst *lsta, t_lst *lstb)
 	}
 	return (1);
 }
-void	ft_sort_for_2(t_lst *lsta, t_lst *lstb)
+void	ft_sort_2(t_lst *lsta, t_lst *lstb)
 {
 	t_node	*lst;
 
@@ -40,7 +40,7 @@ void	ft_sort_for_2(t_lst *lsta, t_lst *lstb)
 		ft_sa(lsta);
 }
 
-void	ft_sort_for_3(t_lst *lsta)
+void	ft_3(t_lst *lsta)
 {
 	t_node	*low;
 	t_node	*higher;

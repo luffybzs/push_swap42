@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
+/*   By: utilisateur <utilisateur@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 12:08:27 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/25 15:02:33 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/25 22:37:44 by utilisateur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ft_rra(t_lst *lsta)
 	if (!(lsta->first) || !(lsta->first->next))
 		return ;
 	reverse_rotate(lsta);
-	ft_putendl_fd("rra", 2);
+	ft_putendl_fd("rra", 1);
 }
 
 void	ft_rrb(t_lst *lstb)
@@ -79,7 +79,7 @@ void	ft_rrb(t_lst *lstb)
 	if (!(lstb->first) || !(lstb->first->next))
 		return ;
 	reverse_rotate(lstb);
-	ft_putendl_fd("rrb", 2);
+	ft_putendl_fd("rrb", 1);
 }
 
 void	ft_rrr(t_lst *lsta, t_lst *lstb)
@@ -88,7 +88,7 @@ void	ft_rrr(t_lst *lsta, t_lst *lstb)
 		return ;
 	reverse_rotate(lsta);
 	reverse_rotate(lstb);
-	ft_putendl_fd("rrr", 2);
+	ft_putendl_fd("rrr", 1);
 }
 
 t_node	*ft_second_last(t_node *lst)

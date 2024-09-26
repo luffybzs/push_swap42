@@ -6,13 +6,13 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:36:07 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/25 17:27:31 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 17:07:17 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-void	ft_free_end(int *tab, t_lst *lsta, t_lst *lstb)
+
+void	ft_ft(int *tab, t_lst *lsta, t_lst *lstb)
 {
 	free(tab);
 	ft_free_list(lstb);
@@ -48,6 +48,25 @@ void	display_stack(t_lst *lst)
 		current = current->next;
 	}
 }
+int	ft_check_empty(int ac, char **av)
+{
+	int	i;
+
+	i = 0;
+	if (ac > 1)
+	{
+		if (av[1][0] == '\0')
+			return (0);
+		else if (av[1][0] == ' ')
+		{
+			while (av[1][i] == 32 && av[1][i])
+				i++;
+			if (av[1][i] == '\0')
+				return (0);
+		}
+	}
+	return (1);
+}
 
 int	main(int ac, char **av)
 {
@@ -58,50 +77,22 @@ int	main(int ac, char **av)
 	i = 0;
 	stack.lsta.first = NULL;
 	stack.lstb.first = NULL;
+	if (ft_check_empty(ac, av) == 0)
+		return (0);
 	tab = ft_valid(ac, av, &stack.lsta);
 	if (!tab)
 		return (0);
 	while (i < stack.lsta.len)
 		add_to_queue(&stack.lsta, tab[i++]);
 	if (is_sorted(&stack.lsta, &stack.lstb) == 1)
-		return (ft_free_end(tab,&stack.lsta,&stack.lstb), 0);
+		return (ft_ft(tab, &stack.lsta, &stack.lstb), 0);
 	if (stack.lsta.len == 2)
-	{
-		ft_sort_for_2(&stack.lsta, &stack.lstb);
-		return (ft_free_end(tab,&stack.lsta,&stack.lstb), 0);
-	}
+		return (ft_sort_2(&stack.lsta, &stack.lstb), ft_ft(tab, &stack.lsta,
+				&stack.lstb), 0);
 	else if (stack.lsta.len == 3)
-		return (ft_sort_for_3(&stack.lsta), ft_free_end(tab,&stack.lsta,&stack.lstb), 0);
-	if (stack.lsta.len > 3)
-	{
+		return (ft_3(&stack.lsta), ft_ft(tab, &stack.lsta, &stack.lstb), 0);
 	ft_sort_tab(tab, stack.lsta.len);
 	ft_sort_stack(&stack, stack.lsta.len, tab);
-	 printf("\nfinal stack \n");
-	 display_stack(&stack.lsta);
-	ft_free_end(tab,&stack.lsta,&stack.lstb);
-	}
+	ft_ft(tab, &stack.lsta, &stack.lstb);
 	return (0);
 }
-
-// int	main(int ac, char **av)
-// {
-// 	int *tab;
-// 	t_lst *lst;
-// 	t_lst *b;
-// 	int i;
-
-// 	lst = NULL;
-// 	b = NULL;
-// 	tab = ft_valid(ac, av, &lst);
-// 	if (!tab)
-// 		return (0);
-// 	i = 0;
-// 	while (i < lst->len)
-// 		add_to_queue(lst, tab[i++]);
-// 	// ft_supa_algo(................)
-
-// 	free(tab);
-// 	display_stack(lst);
-// 	ft_free_list(lst);
-// 	return (0);
-// }

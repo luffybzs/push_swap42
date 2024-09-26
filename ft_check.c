@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:34:45 by ayarab            #+#    #+#             */
-/*   Updated: 2024/09/25 15:34:11 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/26 15:48:35 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,12 @@ int	ft_isdigit_push_swap(char **str)
 		return (0);
 	while (str[j])
 	{
-		if (str[j][0] == '-' || str[j][0] == '+')
+		if ((str[j][0] == '-' || str[j][0] == '+') && str[j][1] != '\0')
 			i++;
 		while (str[j][i] && str[j][i] >= '0' && str[j][i] <= '9')
 			i++;
 		if (str[j][i] != '\0')
-			return (ft_putendl_fd("error", 2), 0);
+			return (ft_putendl_fd("Error", 2), 0);
 		j++;
 		i = 0;
 	}
@@ -103,12 +103,12 @@ int	ft_check_str(char **res)
 		i = j + 1;
 		nb1 = ft_atoi_int(res[j]);
 		if (nb1 == 2147483648)
-			return (ft_putendl_fd("error", 2), 0);
+			return (ft_putendl_fd("Error", 2), 0);
 		while (res[i])
 		{
 			nb2 = ft_atoi_int(res[i]);
 			if (nb1 == nb2 || nb1 >= 2147483648 || nb2 >= 2147483648)
-				return (ft_putendl_fd("error", 2), 0);
+				return (ft_putendl_fd("Error", 2), 0);
 			i++;
 		}
 	}
@@ -119,9 +119,6 @@ char	**ft_parsing(int ac, char **av)
 {
 	char	*str;
 	char	**res;
-	int		i;
-
-	i = 0;
 	if (ac > 1)
 	{
 		str = ft_input(av);
